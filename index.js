@@ -1,10 +1,12 @@
-const express = require('express');
-const app = express();
+const { odd, even } = require('./var');
+const checkNumber = require('./func');
 
-app.get('/', (req, res) => {
-  res.send('Hello Node.js!');
-});
+function checkStringOddOrEven(str) {
+  if (str.length % 2) { // 홀수면
+    return odd;
+  }
+  return even;
+}
 
-app.listen(3000, () => {
-  console.log('서버 실행 중: http://localhost:3000');
-});
+console.log(checkNumber(10));
+console.log(checkStringOddOrEven('hello'));
